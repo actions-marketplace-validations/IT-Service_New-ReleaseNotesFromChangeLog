@@ -74,7 +74,7 @@ try
 		}
 	) -join "`r`n";
 	$releaseNotes | Out-File -Encoding utf8 -FilePath $ReleaseNotesRelativePath -NoNewLine;
-	if ( $releaseNotes.IsEmpty() )
+	if ( [System.String]::IsNullOrEmpty( $releaseNotes ) )
 	{
 		Write-ActionWarning `
 			-Message "Change log does not cotains release notes section for specified version." `
