@@ -88,13 +88,11 @@ try
 			-File $ChangeLogRelativePath;
 	};
 
-	$outputInfo = @{ };
-
 	Write-Verbose "Release notes stored in $ReleaseNotesRelativePath";
-	$outputInfo.Add( 'ReleaseNotesRelativePath', $ReleaseNotesRelativePath );
+	Set-ActionOutput -Name 'release-notes-path' -Value $ReleaseNotesRelativePath;
 
 	Write-Verbose "Actual project version: $processedVersion";
-	$outputInfo.Add( 'processedVersion', $processedVersion );
+	Set-ActionOutput -Name 'actual-version' -Value $processedVersion;
 }
 catch
 {

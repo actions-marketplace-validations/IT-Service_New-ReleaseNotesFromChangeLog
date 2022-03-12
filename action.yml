@@ -34,11 +34,9 @@ runs:
     - id: main
       shell: pwsh
       run: |
-        $outputInfo = . "${{ github.action_path }}/Invoke-GitHubAction.ps1" `
+        . "${{ github.action_path }}/Invoke-GitHubAction.ps1" `
           -Version "${{ inputs.version }}" `
           -Path "${{ inputs.change-log-path }}" `
           -Destination "${{ inputs.release-notes-path }}" `
           -Verbose:( "${{ inputs.verbose }}" -eq "true" ) `
         ;
-        echo "::set-output name=release-notes-path::${ $outputInfo.ReleaseNotesRelativePath }"
-        echo "::set-output name=actual-version::${ $outputInfo.processedVersion }"
