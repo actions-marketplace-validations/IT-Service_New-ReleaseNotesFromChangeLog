@@ -1,0 +1,49 @@
+{
+	"files.exclude": {
+		".git": true,
+		"node_modules/": true
+	},
+	"editor.linkedEditing": true,
+	"editor.folding": true,
+	"editor.foldingHighlight": true,
+	"editor.foldingStrategy": "auto",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"[powershell]": {
+		"editor.formatOnSave": true,
+		"files.trimTrailingWhitespace": true,
+		"files.insertFinalNewline": true
+	},
+	"powershell.codeFormatting.alignPropertyValuePairs": false,
+	"powershell.codeFormatting.openBraceOnSameLine": false,
+	"powershell.codeFormatting.newLineAfterOpenBrace": false,
+	"powershell.codeFormatting.newLineAfterCloseBrace": true,
+	"powershell.codeFormatting.whitespaceBeforeOpenBrace": true,
+	"powershell.codeFormatting.whitespaceBeforeOpenParen": true,
+	"powershell.codeFormatting.whitespaceAroundOperator": true,
+	"powershell.codeFormatting.whitespaceAfterSeparator": true,
+	"powershell.codeFormatting.ignoreOneLineBlock": false,
+	"powershell.codeFormatting.preset": "Custom",
+	"task.autoDetect": "off",
+	"conventionalCommits.autoCommit": false,
+	// "conventionalCommits.emojiFormat": "",
+	"conventionalCommits.gitmoji": true,
+	"conventionalCommits.lineBreak": "\n",
+	"conventionalCommits.promptBody": true,
+	"conventionalCommits.promptFooter": true,
+	"conventionalCommits.promptScopes": true,
+	"conventionalCommits.scopes": [
+		"action",
+		"vscode",
+		"git",
+		"github",
+		"github-actions",
+		"deps",
+		"other",
+		"changelog",
+		"readme"
+	],
+	"conventionalCommits.showEditor": false
+}

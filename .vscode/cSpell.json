@@ -1,0 +1,42 @@
+{
+	"version": "0.2",
+	"ignorePaths": [
+		".git",
+		".git/**",
+		".vscode/*",
+		"node_modules",
+		"**/node_modules",
+		"**/node_modules/**",
+		"node_modules/**"
+	],
+	"language": "ru,en",
+	"dictionaries": [],
+	"words": [
+		"ППСО",
+		"Amadevus",
+		"Betke",
+		"choco",
+		"codeql",
+		"Codespaces",
+		"commitlint",
+		"Committish",
+		"dependabot",
+		"deployka",
+		"deps",
+		"editorconfig",
+		"endregion",
+		"gitsync",
+		"gittools",
+		"gitversion",
+		"markdownlint",
+		"onescript",
+		"oscript",
+		"otymko",
+		"precommit",
+		"pwsh",
+		"tada",
+		"wagoid"
+	],
+	"ignoreRegExpList": [],
+	"enableFiletypes": []
+}

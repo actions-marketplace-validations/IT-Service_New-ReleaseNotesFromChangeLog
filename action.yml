@@ -1,0 +1,22 @@
+name: "{GitHub action name}"
+description: "{GitHub action description}"
+author: "Sergey.S.Betke@yandex.ru"
+branding:
+  icon: "download"
+  color: blue
+inputs:
+  param-id: # param id
+    description: "param description"
+    required: true
+    default: "World"
+outputs:
+  random-number: # output value id
+    description: "Random number"
+    value: ${{ steps.main.outputs.output-param-id }}
+runs:
+  using: "composite"
+  steps:
+    - id: main
+      shell: powershell
+      run: |
+          . "${{ github.action_path }}/Invoke-GitHubAction.ps1";
