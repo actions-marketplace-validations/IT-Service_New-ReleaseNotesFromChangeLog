@@ -41,7 +41,7 @@ try
 	};
 	Write-Verbose "Changelog relative path: $ChangeLogRelativePath";
 
-	$ChangeLog = ( Get-Content -Path ChangeLogRelativePath -Encoding UTF8 );
+	$ChangeLog = ( Get-Content -Path $ChangeLogRelativePath -Encoding UTF8 );
 	$isExpectedSection = $false;
 	$isFirstVersionSection = $true;
 	$processedVersion = '';
@@ -73,9 +73,15 @@ try
 			};
 		}
 	) -join "`r`n";
-	$releaseNotes | Out-File -Encoding utf8 -FilePath $releaseNotesPath -NoNewLine;
-	Write-Verbose "Release notes stored in $releaseNotesPath";
-	Set-ActionOutput -Name 'release-notes-path' -Value $releaseNotesPath;
+	$releaseNotes | Out-File -Encoding utf8 -FilePath $ReleaseNotesRelativePath -NoNewLine;
+	if ( $releaseNotes.IsEmpty() )
+	{
+		Write-ActionWarning `
+			-Message "Change log does not cotains release notes section for specified version." `
+			-File $ChangeLogRelativePath;
+	};
+	Write-Verbose "Release notes stored in $ReleaseNotesRelativePath";
+	Set-ActionOutput -Name 'release-notes-path' -Value $ReleaseNotesRelativePath;
 
 	Write-Verbose "Actual project version: $processedVersion";
 	Set-ActionOutput -Name 'actual-version' -Value $processedVersion;
