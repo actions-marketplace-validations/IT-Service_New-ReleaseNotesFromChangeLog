@@ -28,7 +28,7 @@ Param(
 
 )
 
-Import-Module $PSScriptRoot/lib/GitHubActionsCore;
+Import-Module $PSScriptRoot/lib/GitHubActionsCore -Verbose:$false;
 
 try
 {
