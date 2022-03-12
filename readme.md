@@ -1,11 +1,12 @@
-# GitHub Action "{repository-name}"
+# GitHub Action "New-ReleaseNotesFromChangeLog"
 
-[![GitHub release](https://img.shields.io/github/v/release/{repository-owner}/{repository-name}.svg?sort=semver&logo=github)](https://github.com/{repository-owner}/{repository-name}/releases)
+[![GitHub release](https://img.shields.io/github/v/release/IT-Service/New-ReleaseNotesFromChangeLog.svg?sort=semver&logo=github)](https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/releases)
 
 [![Semantic Versioning](https://img.shields.io/static/v1?label=Semantic%20Versioning&message=v2.0.0&color=green&logo=semver)](https://semver.org/lang/ru/spec/v2.0.0.html)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-v1.0.0-yellow.svg?logo=git)](https://conventionalcommits.org)
 
-This action ...
+This action create ReleaseNotes.md file from ChangeLog.md content for specified
+project version (or for latest (top) version in ChangeLog.md).
 
 ## Usage
 
@@ -16,9 +17,11 @@ Basic:
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: actions/{repository-name}@v1
+- uses: actions/New-ReleaseNotesFromChangeLog@v1
   with:
-    param: 'param value' # comment for param
+  release-notes-path: "RELEASENOTES.md" # path for generated file
+  version: "v1.2.0" # project version for ReleaseNotes.md
+  verbose: true # generate verbose action output
 ```
 
 ## License

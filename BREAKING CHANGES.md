@@ -24,5 +24,5 @@ and this project adheres to
 
 -->
 
-[Unreleased]: https://github.com/{repository-owner}/{repository-name}/compare/v1.0.0...HEAD
-[1.0.1]: https://github.com/{repository-owner}/{repository-name}/compare/v1.0.0...v1.0.1
+[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...HEAD
+[1.0.1]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...v1.0.1

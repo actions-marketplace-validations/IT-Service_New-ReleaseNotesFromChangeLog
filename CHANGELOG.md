@@ -41,8 +41,12 @@ and this project adheres to
 
 ### Added
 
-- feature
+- initial release. Added New-ReleaseNotesFromChangeLog GitHub action
+- add `change-log-path` parameter support
+- add `release-notes-path` parameter support
+- add `version` parameter support
+- add `verbose` parameter support
 
-[Unreleased]: https://github.com/{repository-owner}/{repository-name}/compare/v1.0.0...HEAD
-[1.0.1]: https://github.com/{repository-owner}/{repository-name}/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/{repository-owner}/{repository-name}/releases/tag/v1.0.0
+[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...HEAD
+[1.0.1]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/releases/tag/v1.0.0

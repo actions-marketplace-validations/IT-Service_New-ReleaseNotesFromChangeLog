@@ -1,22 +1,37 @@
-name: "{GitHub action name}"
-description: "{GitHub action description}"
+name: "New-ReleaseNotesFromChangeLog"
+description: "Create ReleaseNotes.md from ChangeLog.md with version filter"
 author: "Sergey.S.Betke@yandex.ru"
 branding:
-  icon: "download"
+  icon: "package"
   color: blue
 inputs:
-  param-id: # param id
-    description: "param description"
-    required: true
-    default: "World"
+  change-log-path:
+    description: "relative path to ChangeLog.md file"
+    required: false
+    default: "CHANGELOG.md"
+  release-notes-path:
+    description: "relative path to ReleaseNotes.md file"
+    required: false
+    default: "RELEASENOTES.md"
+  version:
+    description: "project version, for which ReleaseNotes.md must be generated"
+    required: false
+    default: "latest"
+  verbose:
+    description: "verbose output"
+    required: false
+    default: "true"
 outputs:
-  random-number: # output value id
-    description: "Random number"
-    value: ${{ steps.main.outputs.output-param-id }}
+  release-notes-path:
+    description: "full path to generated ReleaseNotes.md file"
+    value: ${{ steps.main.outputs.release-notes-path }}
+  actual-version:
+    description: "actual project version, for which ReleaseNotes.md generated (used if version param does not specified)"
+    value: ${{ steps.main.outputs.actual-version }}
 runs:
   using: "composite"
   steps:
     - id: main
-      shell: powershell
+      shell: pwsh
       run: |
-          . "${{ github.action_path }}/Invoke-GitHubAction.ps1";
+        . "${{ github.action_path }}/Invoke-GitHubAction.ps1";
