@@ -87,11 +87,14 @@ try
 			-Message "Change log does not cotains release notes section for specified version." `
 			-File $ChangeLogRelativePath;
 	};
+
+	$outputInfo = @{ };
+
 	Write-Verbose "Release notes stored in $ReleaseNotesRelativePath";
-	Set-ActionOutput -Name 'release-notes-path' -Value $ReleaseNotesRelativePath;
+	$outputInfo.Add( 'ReleaseNotesRelativePath', $ReleaseNotesRelativePath );
 
 	Write-Verbose "Actual project version: $processedVersion";
-	Set-ActionOutput -Name 'actual-version' -Value $processedVersion;
+	$outputInfo.Add( 'processedVersion', $processedVersion );
 }
 catch
 {
