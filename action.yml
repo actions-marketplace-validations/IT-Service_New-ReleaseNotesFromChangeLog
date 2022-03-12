@@ -38,5 +38,5 @@ runs:
           -Version "${{ inputs.version }}" `
           -Path "${{ inputs.change-log-path }}" `
           -Destination "${{ inputs.release-notes-path }}" `
-          -Verbose:( "${{ inputs.version }}" -eq "true" ) `
+          -Verbose:( "${{ inputs.verbose }}" -eq "true" ) `
         ;
