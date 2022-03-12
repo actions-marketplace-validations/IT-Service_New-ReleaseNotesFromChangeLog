@@ -29,6 +29,12 @@ inputs:
     description: "configure GitVersion for using config file"
     required: false
     default: "true"
+  use-tag-as-version:
+    description: |
+      Use github.ref_name (tag for current commit).
+      Usable just for action, invoked by version tags.
+    required: false
+    default: "false"
   verbose:
     description: "verbose output"
     required: false
@@ -63,6 +69,10 @@ runs:
         {
           $Version = "${{ steps.gitversion.outputs.semVer }}";
         }
+        elseif ( ${{ ( inputs.use-tag-as-version == 'true' ) }} )
+        {
+          $Version = "${{ github.ref_name }}";
+        };
         else
         {
           $Version = "${{ inputs.version }}";

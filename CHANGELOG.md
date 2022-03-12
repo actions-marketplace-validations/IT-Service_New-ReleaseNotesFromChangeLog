@@ -37,6 +37,13 @@ and this project adheres to
 -
 -->
 
+## [1.2.0]
+
+### Added
+
+- ability to use project version from current tag name
+  (`use-tag-as-version` parameter)
+
 ## [1.1.0]
 
 ### Added
@@ -56,6 +63,7 @@ and this project adheres to
 - add `version` parameter support
 - add `verbose` parameter support
 
-[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/releases/tag/v1.0.0

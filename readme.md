@@ -24,7 +24,7 @@ steps:
     verbose: true # generate verbose action output
 ```
 
-Automatic version project detection:
+Automatic version project detection with `GitVersion`:
 
 ```yaml
 steps:
@@ -33,6 +33,18 @@ steps:
   with:
     use-gitversion: true
     gitversion-use-config-file: true
+    release-notes-path: "RELEASENOTES.md"
+    verbose: true
+```
+
+Use project version from tag name:
+
+```yaml
+steps:
+- uses: actions/checkout@v3
+- uses: actions/New-ReleaseNotesFromChangeLog@v1
+  with:
+    use-tag-as-version: true
     release-notes-path: "RELEASENOTES.md"
     verbose: true
 ```
