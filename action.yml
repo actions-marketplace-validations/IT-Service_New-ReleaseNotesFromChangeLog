@@ -17,10 +17,6 @@ inputs:
     description: "project version, for which ReleaseNotes.md must be generated"
     required: false
     default: "latest"
-  version2:
-    description: "project version, for which ReleaseNotes.md must be generated"
-    required: false
-    default: "latest"
   verbose:
     description: "verbose output"
     required: false
@@ -38,6 +34,9 @@ runs:
     - id: main
       shell: pwsh
       run: |
-        Write-Output ( "Version: $env:INPUT_VERSION" );
-        Write-Output ( "Version2: $env:INPUT_VERSION2" );
-        . "${{ github.action_path }}/Invoke-GitHubAction.ps1";
+        . "${{ github.action_path }}/Invoke-GitHubAction.ps1" `
+          -Version "${{ inputs.version }}" `
+          -Path "${{ inputs.change-log-path }}" `
+          -Destination "${{ inputs.release-notes-path }}" `
+          -Verbose:( "${{ inputs.version }}" -eq "true" ) `
+        ;

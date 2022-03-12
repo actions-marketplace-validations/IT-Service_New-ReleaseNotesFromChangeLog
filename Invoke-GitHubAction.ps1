@@ -1,24 +1,40 @@
-#!/usr/bin/env pwsh
+# Copyright © 2022 Sergei S. Betke
+
+<#
+	.SYNOPSIS
+		Create ReleaseNotes.md from ChangeLog.md
+#>
+
+[CmdletBinding()]
+
+Param(
+
+	# Relative path to ChangeLog.md file
+	[Parameter( Mandatory = $False, Position = 0 )]
+	[Alias( 'ChangeLogPath' )]
+	[System.String]
+	$Path = 'CHANGELOG.md',
+
+	# Relative path to ReleaseNotes.md file
+	[Parameter( Mandatory = $False, Position = 1 )]
+	[Alias( 'ReleaseNotesPath' )]
+	[System.String]
+	$Destination = 'RELEASENOTES.md',
+
+	# Project version, for which ReleaseNotes.md must be generated
+	[Parameter( Mandatory = $False )]
+	[System.String]
+	$Version
+
+)
+
 Import-Module $PSScriptRoot/lib/GitHubActionsCore;
 
 try
 {
-
-	$params = @{ };
-
-	$verboseParam = ( Get-ActionInput -Name 'verbose' );
-	if ( -not ( $verboseParam -and ( $verboseParam -ne 'true' ) ) )
-	{
-		$params.Add( 'Verbose', $true );
-		$VerbosePreference = [System.Management.Automation.ActionPreference]::Continue;
-	};
-	$WarningPreference = [System.Management.Automation.ActionPreference]::Continue;
-
-	$versionParam = ( Get-ActionInput -Name 'version' );
-	if ( $versionParam -and ( $versionParam -ne 'latest' ) )
+	if ( $Version -ne 'latest' )
 	{
 		$LatestVersion = $false;
-		$Version = $versionParam;
 		Write-Verbose "Version $Version";
 	}
 	else
@@ -27,18 +43,9 @@ try
 		Write-ActionWarning 'Version does not specified. Used latest version info from change log.';
 	};
 
-	$ReleaseNotesRelativePath = ( Get-ActionInput -Name 'release-notes-path' );
-	if ( -not $ReleaseNotesRelativePath )
-	{
-		$ReleaseNotesRelativePath = 'RELEASENOTES.md';
-	};
+	$ReleaseNotesRelativePath = $Destination;
 	Write-Verbose "Release notes relative path: $ReleaseNotesRelativePath";
-
-	$ChangeLogRelativePath = ( Get-ActionInput -Name 'change-log-path' );
-	if ( -not $ChangeLogRelativePath )
-	{
-		$ChangeLogRelativePath = 'CHANGELOG.md';
-	};
+	$ChangeLogRelativePath = $Path;
 	Write-Verbose "Changelog relative path: $ChangeLogRelativePath";
 
 	$ChangeLog = ( Get-Content -Path $ChangeLogRelativePath -Encoding UTF8 );
