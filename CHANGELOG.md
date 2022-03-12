@@ -37,6 +37,15 @@ and this project adheres to
 -
 -->
 
+## [1.1.0]
+
+### Added
+
+- ability to automatic detect project version with gitversion
+- add `use-gitversion` parameter
+- add `gitversion-version` parameter
+- add `gitversion-use-config-file` parameter
+
 ## [1.0.0]
 
 ### Added
@@ -47,6 +56,6 @@ and this project adheres to
 - add `version` parameter support
 - add `verbose` parameter support
 
-[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...HEAD
-[1.0.1]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...v1.0.1
+[Unreleased]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/IT-Service/New-ReleaseNotesFromChangeLog/releases/tag/v1.0.0

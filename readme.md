@@ -19,9 +19,22 @@ steps:
 - uses: actions/checkout@v3
 - uses: actions/New-ReleaseNotesFromChangeLog@v1
   with:
-  release-notes-path: "RELEASENOTES.md" # path for generated file
-  version: "v1.2.0" # project version for ReleaseNotes.md
-  verbose: true # generate verbose action output
+    release-notes-path: "RELEASENOTES.md" # path for generated file
+    version: "v1.2.0" # project version for ReleaseNotes.md
+    verbose: true # generate verbose action output
+```
+
+Automatic version project detection:
+
+```yaml
+steps:
+- uses: actions/checkout@v3
+- uses: actions/New-ReleaseNotesFromChangeLog@v1
+  with:
+    use-gitversion: true
+    gitversion-use-config-file: true
+    release-notes-path: "RELEASENOTES.md"
+    verbose: true
 ```
 
 ## License
