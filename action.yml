@@ -65,14 +65,14 @@ runs:
     - id: main
       shell: pwsh
       run: |
-        if ( ${{ ( inputs.use-gitversion == 'true' ) }} )
+        if ( $${{ ( inputs.use-gitversion == 'true' ) }} )
         {
           $Version = "${{ steps.gitversion.outputs.semVer }}";
         }
-        elseif ( ${{ ( inputs.use-tag-as-version == 'true' ) }} )
+        elseif ( $${{ ( inputs.use-tag-as-version == 'true' ) }} )
         {
           $Version = "${{ github.ref_name }}";
-        };
+        }
         else
         {
           $Version = "${{ inputs.version }}";

@@ -37,6 +37,12 @@ and this project adheres to
 -
 -->
 
+## [1.2.1]
+
+### Fixed
+
+- Fixed powershell script run error
+
 ## [1.2.0]
 
 ### Added
