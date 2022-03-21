@@ -51,14 +51,14 @@ runs:
   steps:
     - name: Install GitVersion
       if: ${{ ( inputs.use-gitversion == 'true' ) }}
-      uses: gittools/actions/gitversion/setup@v0.9.11
+      uses: gittools/actions/gitversion/setup@v0.9.13
       with:
         versionSpec: ${{ inputs.gitversion-version }}
 
     - name: Determine Version
       id: gitversion
       if: ${{ ( inputs.use-gitversion == 'true' ) }}
-      uses: gittools/actions/gitversion/execute@v0.9.11
+      uses: gittools/actions/gitversion/execute@v0.9.13
       with:
         useConfigFile: ${{ ( inputs.gitversion-use-config-file == 'true' ) }}
 
